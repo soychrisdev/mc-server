@@ -17,8 +17,12 @@ services:
       SIMULATION_DISTANCE: "14"
       VIEW_DISTANCE: "12"
       SPAWN_PROTECTION: "0"
-      OPS: |-
-        soychriss
       JVM_OPTS: "-Xms1G -Xmx5G"
+      RCON_CMDS_STARTUP: |-
+        pregen start 200
+      RCON_CMDS_FIRST_CONNECT: |-
+        pregen stop
+      RCON_CMDS_LAST_DISCONNECT: |-
+        pregen start 200
     volumes:
       - "./data:/data"
